@@ -13,6 +13,11 @@ target.mkdir(parents=True, exist_ok=True)
 @pytest.fixture
 def driver():
     options = Options()
+    options.add_argument("--headless=new")        # Modo headless moderno
+    options.add_argument("--no-sandbox")          # Necesario en GitHub
+    options.add_argument("--disable-dev-shm-usage")  # Evita crash por memoria
+    options.add_argument("--disable-gpu")
+    options.add_argument("--window-size=1920,1080")
     options.add_argument("--incognito")
 
     driver = webdriver.Chrome(options=options)
