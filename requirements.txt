@@ -3,3 +3,4 @@ pytest-html
 selenium
 behave
 faker
+requests
